@@ -3,8 +3,8 @@ Table users as U {
   hashed_password varchar [not null]
   full_name varchar [not null]
   email varchar [unique, not null]
-  password_changed_at timestamptz [not null, default:`0001-01-1 00:00:00Z`]
-  created_at timestamptz [not null, default: `now()`]
+  password_changed_at timestamptz [not null, default:'0001-01-1 00:00:00Z']
+  created_at timestamptz [not null, default: 'now()']
 } 
 Table accounts as A {
   id bigserial [pk]

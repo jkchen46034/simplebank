@@ -7,6 +7,9 @@ CREATE TABLE "users" (
   "created_at" timestamptz NOT NULL DEFAULT (now())
 );
 
+ALTER TABLE IF EXISTS accounts DROP CONSTRAINT IF EXISTS accounts_owner_key
+;
+
 ALTER TABLE "accounts" ADD FOREIGN KEY ("owner") REFERENCES "users" ("username");
 
 -- CREATE UNIQUE INDEX ON "accounts" ("owner", "currency");
